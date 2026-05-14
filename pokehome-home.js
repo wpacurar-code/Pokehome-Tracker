@@ -394,13 +394,13 @@ function createRegion(regionKey, regionData) {
 }
 
 function renderRegions(regionKeys = Object.keys(regions)) {
-    const main = document.querySelector(".main");
+    const pageRegions = document.querySelector(".regions");
 
     regionKeys.forEach(regionKey => {
         const regionData = regions[regionKey];
         if (!regionData) return;
 
-        main.appendChild(createRegion(regionKey, regionData));
+        pageRegions.appendChild(createRegion(regionKey, regionData));
     });
 }
 
