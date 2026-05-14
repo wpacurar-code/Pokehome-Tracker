@@ -340,19 +340,95 @@ const regions = {
                 ]
             }
         ]
+    },
+    kalos: {
+        title: "Kalos",
+        boxes: [
+            {
+                title: "Kalos 1",
+                pokemon: [
+                    "chespin", "quilladin", "chesnaught", "fennekin", "braixen", "delphox",
+                    "froakie", "frogadier", "greninja", "bunnelby", "diggersby", "fletchling",
+                    "fletchinder", "talonflame", "scatterbug", "spewpa", "vivillon", "litleo",
+                    "pyroar", "flabebe", "floette", "florges", "skiddo", "gogoat",
+                    "pancham", "pangoro", "furfrou", "espurr", "meowstic", "honedge"
+                ]
+            },
+            {
+                title: "Kalos 2",
+                pokemon: [
+                    "doublade", "aegislash", "spritzee", "aromatisse", "swirlix", "slurpuff",
+                    "inkay", "malamar", "binacle", "barbaracle", "skrelp", "dragalge",
+                    "clauncher", "clawitzer", "helioptile", "heliolisk", "tyrunt", "tyrantrum",
+                    "amaura", "aurorus", "sylveon", "hawlucha", "dedenne", "carbink",
+                    "goomy", "sliggoo", "goodra", "klefki", "phantump", "trevenant"
+                ]
+            },
+            {
+                title: "Kalos 3",
+                pokemon: [
+                    "pumpkaboo", "gourgeist", "bergmite", "avalugg", "noibat", "noivern",
+                    "xerneas", "yveltal", "zygarde", "diancie", "hoopa", "volcanion"
+                ]
+            },
+            {
+                title: "Kalos Alternate",
+                pokemon: [
+                    "greninja-ash", "pyroar-f", "meowstic-female", "pumpkaboo-small", "pumpkaboo-large", "pumpkaboo-super",
+                    "gourgeist-small", "gourgeist-large", "gourgeist-super", "furfrou-heart", "furfrou-star", "furfrou-diamond",
+                    "furfrou-debutante", "furfrou-matron", "furfrou-dandy", "furfrou-la-reine", "furfrou-kabuki", "furfrou-pharaoh",
+                    "flabebe-yellow", "flabebe-orange", "flabebe-blue", "flabebe-white", "floette-yellow", "floette-orange",
+                    "floette-blue", "floette-white", "florges-yellow", "florges-orange", "florges-blue", "florges-white"
+                ]
+            },
+            {
+                title: "Kalos Alternate 2",
+                pokemon: [
+                    "zygarde-50", "zygarde-10", "zygarde-10", "hoopa-unbound"
+                ]
+            },
+            {
+                title: "Kalos Vivillon Patterns",
+                pokemon: [
+                    "shedinja", "shedinja", "shedinja", "shedinja", "shedinja", "shedinja",
+                    "shedinja", "shedinja", "shedinja", "shedinja", "shedinja", "shedinja",
+                    "shedinja", "shedinja", "shedinja", "shedinja", "shedinja", "shedinja",
+                    "shedinja", "shedinja"
+                ]
+            }
+        ]
     }
 };
 
+// format name for span popup
+function formatName(name){
+    let newName = name.split('-');
+    newName = newName.map(newName => {
+            return newName.charAt(0).toUpperCase() + newName.slice(1);
+        });
+
+    return newName.join(" ");
+}
+
+// creates individual pokemon div
 function createPokemonDiv(name) {
+    // div, class, data-pokemon
     const pokemon = document.createElement("div");
     pokemon.className = "pokemon";
     pokemon.dataset.pokemon = name;
 
+    // img, src, alt
     const img = document.createElement("img");
     img.src = `https://img.pokemondb.net/sprites/home/normal/${name}.png`;
     img.alt = name;
 
+    // span, class, text
+    const span = document.createElement("span");
+    span.className = "pokemonName";
+    span.textContent = formatName(name);
+
     pokemon.appendChild(img);
+    pokemon.appendChild(span);
     return pokemon;
 }
 
@@ -409,7 +485,7 @@ renderRegions(["johto"]);
 renderRegions(["hoenn"]);
 renderRegions(["sinnoh"]);
 renderRegions(["unova"]);
-// renderRegions(["kalos"]);
+renderRegions(["kalos"]);
 // renderRegions(["alola"]);
 // renderRegions(["galar"]);
 // renderRegions(["paldea"]);
