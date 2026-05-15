@@ -390,10 +390,67 @@ const regions = {
             {
                 title: "Kalos Vivillon Patterns",
                 pokemon: [
-                    "shedinja", "shedinja", "shedinja", "shedinja", "shedinja", "shedinja",
-                    "shedinja", "shedinja", "shedinja", "shedinja", "shedinja", "shedinja",
-                    "shedinja", "shedinja", "shedinja", "shedinja", "shedinja", "shedinja",
-                    "shedinja", "shedinja"
+                    "vivillon-icy-snow", "vivillon-polar", "vivillon-tundra", "vivillon-continental", "vivillon-garden", "vivillon-elegant",
+                    "vivillon-meadow", "vivillon-modern", "vivillon-marine", "vivillon-archipelago", "vivillon-high-plains", "vivillon-sandstorm",
+                    "vivillon-river", "vivillon-monsoon", "vivillon-savanna", "vivillon-sun", "vivillon-ocean", "vivillon-jungle",
+                    "vivillon-fancy", "vivillon-poke-ball"
+                ]
+            }
+        ]
+    },
+    alola: {
+        title: "Alola",
+        boxes: [
+            {
+                title: "Alola 1",
+                pokemon: [
+                    "rowlet", "dartrix", "decidueye", "litten", "torracat", "incineroar",
+                    "popplio", "brionne", "primarina", "pikipek", "trumbeak", "toucannon",
+                    "yungoos", "gumshoos", "grubbin", "charjabug", "vikavolt", "crabrawler",
+                    "crabominable", "oricorio", "cutiefly", "ribombee", "rockruff", "lycanroc",
+                    "wishiwashi", "mareanie", "toxapex", "mudbray", "mudsdale", "dewpider"
+                ]
+            },
+            {
+                title: "Alola 2",
+                pokemon: [
+                    "araquanid", "fomantis", "lurantis", "morelull", "shiinotic", "salandit",
+                    "salazzle", "stufful", "bewear", "bounsweet", "steenee", "tsareena",
+                    "comfey", "oranguru", "passimian", "wimpod", "golisopod", "sandygast",
+                    "palossand", "pyukumuku", "type-null", "silvally", "minior", "komala",
+                    "turtonator", "togedemaru", "mimikyu", "bruxish", "drampa", "dhelmise"
+                ]
+            },
+            {
+                title: "Alola 3",
+                pokemon: [
+                    "jangmo-o", "hakamo-o", "kommo-o", "tapu-koko", "tapu-lele", "tapu-bulu",
+                    "tapu-fini", "cosmog", "cosmoem", "solgaleo", "lunala", "nihilego",
+                    "buzzwole", "pheromosa", "xurkitree", "celesteela", "kartana", "guzzlord",
+                    "necrozma", "magearna", "marshadow", "poipole", "naganadel", "stakataka",
+                    "blacephalon", "zeraora"
+                ]
+            },
+            {
+                title: "Alola Alternate",
+                pokemon: [
+                    "oricorio-pom-pom", "oricorio-pau", "oricorio-sensu", "rockruff", "lycanroc-midnight", "lycanroc-dusk",
+                    "minior-orange-core", "minior-yellow-core", "minior-green-core", "minior-blue-core", "minior-indigo-core", "minior-violet-core",
+                    "magearna-original"
+                ]
+            },
+            {
+                title: "Alola Forms",
+                pokemon: [
+                    "rattata-alolan", "raticate-alolan", "raichu-alolan", "sandshrew-alolan", "sandslash-alolan", "vulpix-alolan",
+                    "ninetales-alolan", "diglett-alolan", "dugtrio-alolan", "meowth-alolan", "persian-alolan", "geodude-alolan",
+                    "graveler-alolan", "golem-alolan", "grimer-alolan", "muk-alolan", "exeggutor-alolan", "marowak-alolan",
+                ]
+            },
+            {
+                title: "Unknown Region",
+                pokemon: [
+                    "meltan", "melmetal"
                 ]
             }
         ]
@@ -486,6 +543,55 @@ renderRegions(["hoenn"]);
 renderRegions(["sinnoh"]);
 renderRegions(["unova"]);
 renderRegions(["kalos"]);
-// renderRegions(["alola"]);
+renderRegions(["alola"]);
 // renderRegions(["galar"]);
 // renderRegions(["paldea"]);
+
+
+// set that includes registered pokemon
+const registeredPokemon = new Set();
+
+// pokemon click listener
+function selectionListener() {
+    document.querySelectorAll(".pokemon").forEach(pokemon => {
+        pokemon.addEventListener("click", () => {
+            // handle event
+            pokemonClicked(pokemon);
+        });
+    });
+}
+
+// checks if pokemon is already registered
+function pokemonExist(pokemon){
+    return registeredPokemon.has(pokemon.dataset.pokemon);
+}
+
+// updates progress
+function updateProgress(){
+    document.querySelector(".totalProgress").innerHTML = registeredPokemon.size;
+}
+
+// handles pokemon click
+function pokemonClicked(pokemon){
+    // logging
+    console.log("clicked");
+
+    //if unregistered
+    if(!pokemonExist(pokemon)){
+        // add to set
+        registeredPokemon.add(pokemon.dataset.pokemon);
+        // toggle visual
+        pokemon.firstChild.classList.add("registered");
+    }
+    // if registered
+    else{
+        // remove from set
+        registeredPokemon.delete(pokemon.dataset.pokemon);
+        // toggle visual
+        pokemon.firstChild.classList.remove("registered");
+    }
+
+    // update progress
+    updateProgress();
+}
+selectionListener();

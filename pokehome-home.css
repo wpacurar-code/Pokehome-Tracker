@@ -56,6 +56,10 @@
         cursor: pointer;
     }
 
+    .pokemon:hover img{
+        opacity: 1;
+    }
+
     .pokemon img.registered {
         opacity: 1;
         outline: 2px solid limegreen;
