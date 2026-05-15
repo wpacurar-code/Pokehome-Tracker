@@ -1,4 +1,14 @@
-    /* make whole region layout flexible */
+/* font */
+body {
+     font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+/* make whole region layout flexible */
     .region {
         display: flex;
         flex-wrap: wrap;
@@ -63,6 +73,7 @@
     .pokemon img.registered {
         opacity: 1;
         outline: 2px solid limegreen;
+        border-radius: 5px;
     }
 
     .pokemon span{

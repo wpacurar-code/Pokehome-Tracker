@@ -454,6 +454,156 @@ const regions = {
                 ]
             }
         ]
+    },
+    galar: {
+        title: "Galar",
+        boxes: [
+            {
+                title: "Galar 1",
+                pokemon: [
+                    "grookey", "thwackey", "rillaboom", "scorbunny", "raboot", "cinderace",
+                    "sobble", "drizzile", "inteleon", "skwovet", "greedent", "rookidee",
+                    "corvisquire", "corviknight", "blipbug", "dottler", "orbeetle", "nickit",
+                    "thievul", "gossifleur", "eldegoss", "wooloo", "dubwool", "chewtle",
+                    "drednaw", "yamper", "boltund", "rolycoly", "carkol", "coalossal"
+                ]
+            },
+            {
+                title: "Galar 2",
+                pokemon: [
+                    "applin", "flapple", "appletun", "silicobra", "sandaconda", "cramorant",
+                    "arrokuda", "barraskewda", "toxel", "toxtricity", "sizzlipede", "centiskorch",
+                    "clobbopus", "grapploct", "sinistea", "polteageist", "hatenna", "hattrem",
+                    "hatterene", "impidimp", "morgrem", "grimmsnarl", "obstagoon", "perrserker",
+                    "cursola", "sirfetchd", "mr-rime", "runerigus", "milcery", "alcremie"
+                ]
+            },
+            {
+                title: "Galar 3",
+                pokemon: [
+                    "falinks", "pincurchin", "snom", "frosmoth", "stonjourner", "eiscue",
+                    "indeedee", "morpeko", "cufant", "copperajah", "dracozolt", "arctozolt",
+                    "dracovish", "arctovish", "duraludon", "dreepy", "drakloak", "dragapult",
+                    "zacian", "zamazenta", "eternatus", "kubfu", "urshifu", "zarude",
+                    "regieleki", "regidrago", "glastrier", "spectrier", "calyrex"
+                ]
+            },
+            {
+                title: "Galar Alternate",
+                pokemon: [
+                    "indeedee-female", "toxtricity-low-key", "sinistea", "polteageist", "urshifu-rapid-strike", "zarude-dada"
+                ]
+            },
+            {
+                title: "Galar Forms",
+                pokemon: [
+                    "meowth-galarian", "ponyta-galarian", "rapidash-galarian", "slowpoke-galarian", "slowbro-galarian", "farfetchd-galarian",
+                    "weezing-galarian", "mr-mime-galarian", "articuno-galarian", "zapdos-galarian", "moltres-galarian", "slowking-galarian",
+                    "corsola-galarian", "zigzagoon-galarian", "linoone-galarian", "darumaka-galarian", "darmanitan-galarian-standard", "yamask-galarian",
+                    "stunfisk-galarian"
+                ]
+            },
+            {
+                title: "Alcremie 1",
+                pokemon: [
+                    "alcremie-vanilla-cream-strawberry", "alcremie-vanilla-cream-berry", "alcremie-vanilla-cream-love", "alcremie-vanilla-cream-star", "alcremie-vanilla-cream-clover", "alcremie-vanilla-cream-flower",
+                    "alcremie-vanilla-cream-ribbon", "alcremie-ruby-cream-strawberry", "alcremie-ruby-cream-berry", "alcremie-ruby-cream-love", "alcremie-ruby-cream-star", "alcremie-ruby-cream-clover",
+                    "alcremie-ruby-cream-flower", "alcremie-ruby-cream-ribbon", "alcremie-matcha-cream-strawberry", "alcremie-matcha-cream-berry", "alcremie-matcha-cream-love", "alcremie-matcha-cream-star",
+                    "alcremie-matcha-cream-clover", "alcremie-matcha-cream-flower", "alcremie-matcha-cream-ribbon", "alcremie-mint-cream-strawberry", "alcremie-mint-cream-berry", "alcremie-mint-cream-love",
+                    "alcremie-mint-cream-star", "alcremie-mint-cream-clover", "alcremie-mint-cream-flower", "alcremie-mint-cream-ribbon"
+                ]
+            },
+            {
+                title: "Alcremie 2",
+                pokemon: [
+                    "alcremie-lemon-cream-strawberry", "alcremie-lemon-cream-berry", "alcremie-lemon-cream-love", "alcremie-lemon-cream-star", "alcremie-lemon-cream-clover", "alcremie-lemon-cream-flower",
+                    "alcremie-lemon-cream-ribbon", "alcremie-salted-cream-strawberry", "alcremie-salted-cream-berry", "alcremie-salted-cream-love", "alcremie-salted-cream-star", "alcremie-salted-cream-clover",
+                    "alcremie-salted-cream-flower", "alcremie-salted-cream-ribbon", "alcremie-ruby-swirl-strawberry", "alcremie-ruby-swirl-berry", "alcremie-ruby-swirl-love", "alcremie-ruby-swirl-star",
+                    "alcremie-ruby-swirl-clover", "alcremie-ruby-swirl-flower", "alcremie-ruby-swirl-ribbon", "alcremie-caramel-swirl-strawberry", "alcremie-caramel-swirl-berry", "alcremie-caramel-swirl-love",
+                    "alcremie-caramel-swirl-star", "alcremie-caramel-swirl-clover", "alcremie-caramel-swirl-flower", "alcremie-caramel-swirl-ribbon"
+                ]
+            },
+            {
+                title: "Alcremie 3",
+                pokemon: [
+                    "alcremie-rainbow-swirl-strawberry", "alcremie-rainbow-swirl-berry", "alcremie-rainbow-swirl-love", "alcremie-rainbow-swirl-star", "alcremie-rainbow-swirl-clover", "alcremie-rainbow-swirl-flower",
+                    "alcremie-rainbow-swirl-ribbon"
+                ]
+            },
+            {
+                title: "Hisui",
+                pokemon: [
+                    "wyrdeer", "kleavor", "ursaluna", "basculegion", "basculegion-female", "sneasler",
+                    "overqwil", "enamorus", "enamorus-therian"
+                ]
+            },
+            {
+                title: "Hisuian Forms",
+                pokemon: [
+                    "growlithe-hisuian", "arcanine-hisuian", "voltorb-hisuian", "electrode-hisuian", "typhlosion-hisuian", "qwilfish-hisuian",
+                    "sneasel-hisuian", "sneasel-hisuian-f", "samurott-hisuian", "lilligant-hisuian", "basculin-white-striped", "zorua-hisuian",
+                    "zoroark-hisuian", "braviary-hisuian", "sliggoo-hisuian", "goodra-hisuian", "avalugg-hisuian", "decidueye-hisuian"
+                ]
+            }
+        ]
+    },
+        paldea: {
+        title: "Paldea",
+        boxes: [
+            {
+                title: "Paldea 1",
+                pokemon: [
+                    "sprigatito", "floragato", "meowscarada", "fuecoco", "crocalor", "skeledirge",
+                    "quaxly", "quaxwell", "quaquaval", "lechonk", "oinkologne", "tarountula",
+                    "spidops", "nymble", "lokix", "pawmi", "pawmo", "pawmot",
+                    "tandemaus", "maushold", "fidough", "dachsbun", "smoliv", "dolliv",
+                    "arboliva", "squawkabilly", "nacli", "naclstack", "garganacl", "charcadet"
+                ]
+            },
+            {
+                title: "Paldea 2",
+                pokemon: [
+                    "armarouge", "ceruledge", "tadbulb", "bellibolt", "wattrel", "kilowattrel",
+                    "maschiff", "mabosstiff", "shroodle", "grafaiai", "bramblin", "brambleghast",
+                    "toedscool", "toedscruel", "klawf", "capsakid", "scovillain", "rellor",
+                    "rabsca", "flittle", "espathra", "tinkatink", "tinkatuff", "tinkaton",
+                    "wiglett", "wugtrio", "bombirdier", "finizen", "palafin", "varoom"
+                ]
+            },
+            {
+                title: "Paldea 3",
+                pokemon: [
+                    "revavroom", "cyclizar", "orthworm", "glimmet", "glimmora", "greavard",
+                    "houndstone", "flamigo", "cetoddle", "cetitan", "veluza", "dondozo",
+                    "tatsugiri", "annihilape", "clodsire", "farigiraf", "dudunsparce", "kingambit",
+                    "great-tusk", "scream-tail", "brute-bonnet", "flutter-mane", "slither-wing", "sandy-shocks",
+                    "iron-treads", "iron-bundle", "iron-hands", "iron-jugulis", "iron-moth", "iron-thorns"
+                ]
+            },
+            {
+                title: "Paldea 4",
+                pokemon: [
+                    "frigibax", "arctibax", "baxcalibur", "gimmighoul", "gholdengo", "wo-chien",
+                    "chien-pao", "ting-lu", "chi-yu", "roaring-moon", "iron-valiant", "koraidon",
+                    "miraidon", "walking-wake", "iron-leaves", "dipplin", "poltchageist", "sinistcha",
+                    "okidogi", "munkidori", "fezandipiti", "ogerpon", "archaludon", "hydrapple",
+                    "gouging-fire", "raging-bolt", "iron-boulder", "iron-crown", "terapagos", "pecharunt"
+                ]
+            },
+            {
+                title: "Paldea Alternate",
+                pokemon: [
+                    "oinkologne-female", "maushold-family4", "squawkabilly-blue", "squawkabilly-yellow", "squawkabilly-white", "tatsugiri-droopy",
+                    "tatsugiri-stretchy", "dudunsparce-three-segment", "gimmighoul-roaming", "poltchageist", "sinistcha", "ursaluna-bloodmoon",
+                ]
+            },
+            {
+                title: "Paldean Forms",
+                pokemon: [
+                    "tauros-paldean-combat", "tauros-paldean-blaze", "tauros-paldean-aqua", "wooper-paldean"
+                ]
+            }
+        ]
     }
 };
 
@@ -512,6 +662,7 @@ function createRegion(regionKey, regionData) {
 
     const title = document.createElement("h2");
     title.textContent = regionData.title;
+    title.id = regionData.title;
     section.appendChild(title);
 
     regionData.boxes.forEach((boxData) => {
@@ -537,6 +688,7 @@ function renderRegions(regionKeys = Object.keys(regions)) {
     });
 }
 
+// render the regions
 renderRegions(["kanto"]);
 renderRegions(["johto"]);
 renderRegions(["hoenn"]);
@@ -544,8 +696,8 @@ renderRegions(["sinnoh"]);
 renderRegions(["unova"]);
 renderRegions(["kalos"]);
 renderRegions(["alola"]);
-// renderRegions(["galar"]);
-// renderRegions(["paldea"]);
+renderRegions(["galar"]);
+renderRegions(["paldea"]);
 
 
 // set that includes registered pokemon
