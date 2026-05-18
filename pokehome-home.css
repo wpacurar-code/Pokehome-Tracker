@@ -1,11 +1,96 @@
 /* font */
 body {
-     font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+    color: white;
+    background: #3d3de0;
+    background: linear-gradient(90deg, rgba(61, 61, 224, 1) 0%, rgba(28, 149, 173, 1) 100%);
+}
+
+/* https://coolors.co/palettes/popular/#3232ab */
+
+/* header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #262d48;
+    border-radius: 15px;
+}
+
+/* logo */
+.headerLogo {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* centered progress */
+.header .totalProgress {
+    text-align: center;
+}
+
+/* right nav */
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* links */
+.header a, .header h2{
+    text-align: center;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    border-radius: 10px;
+}
+
+.header a:visited {
+    color: inherit;
+}
+
+.header a:hover {
+    background-color: #0f3861;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header .progress {
+        position: static;
+        transform: none;
+    }
+
+    .header-right {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+.jumpLinks {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
 }
 
 /* make whole region layout flexible */
@@ -21,6 +106,7 @@ body {
         width: 100%;
         text-align: center;
         margin-bottom: 20px;
+        scroll-margin-top: 90px;
     }
 
     .box {
@@ -32,7 +118,7 @@ body {
         padding: 15px;
         border: 2px solid #333;
         border-radius: 25px;
-        background-color: #f8f8f8;
+        background-color: #95C2BE;
 
         width: fit-content;
         min-width: fit-content;
@@ -44,6 +130,8 @@ body {
         text-align: center;
         margin: 0 0 10px 0;
         font-size: 1.2rem;
+        background-color: #227C80;
+        border-radius: 15px;
     }
 
     .pokemon {
@@ -80,7 +168,6 @@ body {
         display: none;
         max-width: 100px;
         background-color: black;
-        color: #ffffff;
         text-align: center;
         padding: 5px 12px;
         border-radius: 6px;
