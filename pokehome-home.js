@@ -703,6 +703,25 @@ renderRegions(["paldea"]);
 // set that includes registered pokemon
 const registeredPokemon = new Set();
 
+// header dropdown listener
+function headerDropdownListener(){
+    // open
+    document.querySelector(".headerJump").addEventListener("click", (event) => {
+        event.stopPropagation();
+        document.querySelector(".jumpLinks").classList.toggle("open");
+    });
+
+    // // prevent closing when clicking inside dropdown
+    // document.querySelector(".jumpLinks").addEventListener("click", (event) => {
+    //     event.stopPropagation();
+    // });
+
+    // close
+    document.addEventListener("click", () => {
+        document.querySelector(".jumpLinks").classList.remove("open");
+    });
+}
+
 // pokemon click listener
 function selectionListener() {
     document.querySelectorAll(".pokemon").forEach(pokemon => {
@@ -725,9 +744,6 @@ function updateProgress(){
 
 // handles pokemon click
 function pokemonClicked(pokemon){
-    // logging
-    console.log("clicked");
-
     //if unregistered
     if(!pokemonExist(pokemon)){
         // add to set
@@ -746,4 +762,7 @@ function pokemonClicked(pokemon){
     // update progress
     updateProgress();
 }
+
+// calling listeners
 selectionListener();
+headerDropdownListener();
