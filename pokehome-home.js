@@ -547,7 +547,7 @@ const regions = {
             }
         ]
     },
-        paldea: {
+    paldea: {
         title: "Paldea",
         boxes: [
             {
@@ -608,11 +608,11 @@ const regions = {
 };
 
 // format name for span popup
-function formatName(name){
+function formatName(name) {
     let newName = name.split('-');
     newName = newName.map(newName => {
-            return newName.charAt(0).toUpperCase() + newName.slice(1);
-        });
+        return newName.charAt(0).toUpperCase() + newName.slice(1);
+    });
 
     return newName.join(" ");
 }
@@ -704,7 +704,7 @@ renderRegions(["paldea"]);
 const registeredPokemon = new Set();
 
 // header dropdown listener
-function headerDropdownListener(){
+function headerDropdownListener() {
     // open
     document.querySelector(".headerJump").addEventListener("click", (event) => {
         event.stopPropagation();
@@ -733,26 +733,26 @@ function selectionListener() {
 }
 
 // checks if pokemon is already registered
-function pokemonExist(pokemon){
+function pokemonExist(pokemon) {
     return registeredPokemon.has(pokemon.dataset.pokemon);
 }
 
 // updates progress
-function updateProgress(){
+function updateProgress() {
     document.querySelector(".totalProgress").innerHTML = registeredPokemon.size;
 }
 
 // handles pokemon click
-function pokemonClicked(pokemon){
+function pokemonClicked(pokemon) {
     //if unregistered
-    if(!pokemonExist(pokemon)){
+    if (!pokemonExist(pokemon)) {
         // add to set
         registeredPokemon.add(pokemon.dataset.pokemon);
         // toggle visual
         pokemon.firstChild.classList.add("registered");
     }
     // if registered
-    else{
+    else {
         // remove from set
         registeredPokemon.delete(pokemon.dataset.pokemon);
         // toggle visual
