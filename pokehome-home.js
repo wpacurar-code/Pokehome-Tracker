@@ -727,9 +727,13 @@ function searchListener(){
     document.querySelector(".searchSubmit").addEventListener("click", () =>{
         const searchInput = document.querySelector(".searchBar").value.toLowerCase();
         try{
+            // scroll down to pokemon
             document.querySelector(`[data-pokemon="${searchInput}"]`).scrollIntoView({
                 behavior: "smooth"
             });
+
+            // blink animation
+
         }
         catch (error){
             console.log("Pokemon Doesn't Exist");

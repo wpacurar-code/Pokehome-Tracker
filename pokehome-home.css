@@ -124,12 +124,15 @@ body {
     margin-right: 10px;
     padding-left: 10px;
     border-radius: 5px;
+    background-color: #95C2BE;
 }
 
 .searchSubmit{
     margin-left: 10px;
     padding: 8px 15px;
     border-radius: 5px;
+    color: white;
+    background-color: #227C80;
 }
 
 /* make whole region layout flexible */
