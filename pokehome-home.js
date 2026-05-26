@@ -722,6 +722,21 @@ function headerDropdownListener() {
     });
 }
 
+// search feature
+function searchListener(){
+    document.querySelector(".searchSubmit").addEventListener("click", () =>{
+        const searchInput = document.querySelector(".searchBar").value.toLowerCase();
+        try{
+            document.querySelector(`[data-pokemon="${searchInput}"]`).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+        catch (error){
+            console.log("Pokemon Doesn't Exist");
+        }
+    });
+}
+
 // pokemon click listener
 function selectionListener() {
     document.querySelectorAll(".pokemon").forEach(pokemon => {
@@ -766,3 +781,4 @@ function pokemonClicked(pokemon) {
 // calling listeners
 selectionListener();
 headerDropdownListener();
+searchListener();

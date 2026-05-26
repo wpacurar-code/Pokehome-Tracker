@@ -16,14 +16,17 @@
 <div class="main">
     <!-- header -->
     <div class="header">
-        <a href="" class="headerLogo">PokeHome Tracker</a>
+    
+        <div class="header-left">
+            <!-- logo / site link -->
+            <a href="" class="headerLogo">PokeHome Tracker</a>
 
-        <!-- living dex progress -->
-        <div>
-            <h2>Progress: <span class="totalProgress">0</span> / 1431</h2>
+            <!-- progress -->
+            <h2>Dex Progress: <span class="totalProgress">0</span> / 1431</h2>
         </div>
 
         <div class="header-right">
+            <!-- jump dropdown -->
             <a href="#default" class="headerJump">Jump to Region</a>
             <div id="headerDropdown" class="jumpLinks">
                 <h3><a href="#Kanto">Kanto</a></h3>
@@ -37,8 +40,17 @@
                 <h3><a href="#Paldea">Paldea</a></h3>
             </div>
 
+            <!-- top link -->
             <a href="#top" class="headerTop">Back to Top</a>
+
+            <!-- profile link -->
+            <a href="#" class="headerProfile">Profile</a>
         </div>
+    </div>
+
+    <div class="searchArea">
+        <input type="text" class="searchBar" placeholder="Enter Pokemon Name" />
+        <button type="submit" class="searchSubmit">Search</button>
     </div>
 
     <div class="regions"></div>
