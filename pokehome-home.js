@@ -641,10 +641,12 @@ function createPokemonDiv(name) {
     return pokemon;
 }
 
+// creates the box
 function createBox(regionTitle, pokemonList) {
     const box = document.createElement("div");
     box.className = "box";
 
+    // box heading
     const heading = document.createElement("h3");
     heading.className = "boxTitles";
     heading.textContent = `${regionTitle}`;
@@ -657,11 +659,15 @@ function createBox(regionTitle, pokemonList) {
     return box;
 }
 
+// creates region
 function createRegion(regionKey, regionData) {
+    // class, data-region
     const section = document.createElement("section");
     section.className = "region";
     section.dataset.region = regionKey;
 
+    // region header
+    // id
     const title = document.createElement("h2");
     title.textContent = regionData.title;
     title.id = regionData.title;
@@ -678,7 +684,7 @@ function createRegion(regionKey, regionData) {
     });
     return section;
 }
-
+// compiles pokemon from region
 function renderRegions(regionKeys = Object.keys(regions)) {
     const pageRegions = document.querySelector(".regions");
 
@@ -705,20 +711,22 @@ renderRegions(["paldea"]);
 // set that includes registered pokemon
 const registeredPokemon = new Set();
 
-// header dropdown listener
+// opens the region jump dropdown
 function headerDropdownListener() {
     // open
     document.querySelector(".headerJump").addEventListener("click", (event) => {
         event.stopPropagation();
         document.querySelector(".jumpLinks").classList.toggle("open");
     });
+}
 
     // // prevent closing when clicking inside dropdown
     // document.querySelector(".jumpLinks").addEventListener("click", (event) => {
     //     event.stopPropagation();
     // });
 
-    // close
+    // closes region jump dropdown
+    function headerCloseListener(){
     document.addEventListener("click", () => {
         document.querySelector(".jumpLinks").classList.remove("open");
     });
@@ -802,6 +810,7 @@ function pokemonClicked(pokemon) {
 }
 
 // calling listeners
-selectionListener();
 headerDropdownListener();
+headerCloseListener();
 searchListener();
+selectionListener();

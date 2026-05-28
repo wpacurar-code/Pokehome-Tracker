@@ -133,7 +133,7 @@ body {
     padding: 8px 15px;
     border-radius: 5px;
     color: white;
-    border: none ;
+    border: none;
     background-color: #227C80;
 }
 .searchSubmit:hover{
@@ -145,20 +145,17 @@ body {
 
 /* search highlight */
 .pokemon img.searched {
+    opacity: 1;
     /* thickness, color, length */
     --b: 2px;
     --c: #262d48;
     --w: 30px;
     border: var(--b) solid #0000;
     background:
-        linear-gradient(var(--c), var(--c)) top center /
-        var(--w) var(--b) no-repeat,
-        linear-gradient(var(--c), var(--c)) bottom center /
-        var(--w) var(--b) no-repeat,
-        linear-gradient(var(--c), var(--c)) left center /
-        var(--b) var(--w) no-repeat,
-        linear-gradient(var(--c), var(--c)) right center /
-        var(--b) var(--w) no-repeat;
+        linear-gradient(var(--c), var(--c)) top center / var(--w) var(--b) no-repeat,
+        linear-gradient(var(--c), var(--c)) bottom center / var(--w) var(--b) no-repeat,
+        linear-gradient(var(--c), var(--c)) left center / var(--b) var(--w) no-repeat,
+        linear-gradient(var(--c), var(--c)) right center / var(--b) var(--w) no-repeat;
 }
 
 /* regions - flexible */
