@@ -1,3 +1,5 @@
+import { animate } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
 const regions = {
     kanto: {
         title: "Kanto",
@@ -626,7 +628,7 @@ function createPokemonDiv(name) {
 
     // img, src, alt
     const img = document.createElement("img");
-    img.src = `https://img.pokemondb.net/sprites/home/normal/${name}.png`;
+    img.src = `sprites/${name}.png`;
     img.alt = name;
 
     // span, class, text
@@ -727,13 +729,30 @@ function searchListener(){
     document.querySelector(".searchSubmit").addEventListener("click", () =>{
         const searchInput = document.querySelector(".searchBar").value.toLowerCase();
         try{
+            const searchedPokemon = document.querySelector(`[data-pokemon="${searchInput}"]`);
             // scroll down to pokemon
-            document.querySelector(`[data-pokemon="${searchInput}"]`).scrollIntoView({
+            searchedPokemon.scrollIntoView({
                 behavior: "smooth"
             });
 
-            // blink animation
-
+            // animation
+            setTimeout(() => {
+                searchedPokemon.firstChild.classList.add("searched");
+                animate(
+                    searchedPokemon,
+                    {
+                        scale: [1, 1.15, 1],
+                    },
+                    {
+                        duration: 0.6,
+                        repeat: 5,
+                        repeatType: "loop"
+                    }
+                );
+                setTimeout(() => {
+                    searchedPokemon.firstChild.classList.remove("searched");
+                }, 4000);
+            }, 400);
         }
         catch (error){
             console.log("Pokemon Doesn't Exist");
