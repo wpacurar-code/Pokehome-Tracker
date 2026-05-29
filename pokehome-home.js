@@ -745,6 +745,13 @@ function searchListener(){
 
             // animation
             setTimeout(() => {
+                // remove registered style temporarily
+                let flag = 0;
+                if (registeredPokemon.has(searchInput)){
+                    searchedPokemon.firstChild.classList.remove("registered");
+                    flag = 1;
+                }
+                // add searched style
                 searchedPokemon.firstChild.classList.add("searched");
                 animate(
                     searchedPokemon,
@@ -758,7 +765,12 @@ function searchListener(){
                     }
                 );
                 setTimeout(() => {
+                    // remove searched style
                     searchedPokemon.firstChild.classList.remove("searched");
+                    // add registered style back
+                    if (flag == 1){
+                    searchedPokemon.firstChild.classList.add("registered");
+                    }
                 }, 4000);
             }, 400);
         }
