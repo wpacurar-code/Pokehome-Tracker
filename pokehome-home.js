@@ -1,4 +1,4 @@
-import { animate } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+import {animate} from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
 
 const regions = {
     kanto: {
@@ -597,6 +597,7 @@ const regions = {
                 pokemon: [
                     "oinkologne-female", "maushold-family4", "squawkabilly-blue", "squawkabilly-yellow", "squawkabilly-white", "tatsugiri-droopy",
                     "tatsugiri-stretchy", "dudunsparce-three-segment", "gimmighoul-roaming", "poltchageist", "sinistcha", "ursaluna-bloodmoon",
+                    "floette-eternal"
                 ]
             },
             {
@@ -684,6 +685,7 @@ function createRegion(regionKey, regionData) {
     });
     return section;
 }
+
 // compiles pokemon from region
 function renderRegions(regionKeys = Object.keys(regions)) {
     const pageRegions = document.querySelector(".regions");
@@ -720,23 +722,23 @@ function headerDropdownListener() {
     });
 }
 
-    // // prevent closing when clicking inside dropdown
-    // document.querySelector(".jumpLinks").addEventListener("click", (event) => {
-    //     event.stopPropagation();
-    // });
+// // prevent closing when clicking inside dropdown
+// document.querySelector(".jumpLinks").addEventListener("click", (event) => {
+//     event.stopPropagation();
+// });
 
-    // closes region jump dropdown
-    function headerCloseListener(){
+// closes region jump dropdown
+function headerCloseListener() {
     document.addEventListener("click", () => {
         document.querySelector(".jumpLinks").classList.remove("open");
     });
 }
 
 // search feature
-function searchListener(){
-    document.querySelector(".searchSubmit").addEventListener("click", () =>{
+function searchListener() {
+    document.querySelector(".searchSubmit").addEventListener("click", () => {
         const searchInput = document.querySelector(".searchBar").value.toLowerCase();
-        try{
+        try {
             const searchedPokemon = document.querySelector(`[data-pokemon="${searchInput}"]`);
             // scroll down to pokemon
             searchedPokemon.scrollIntoView({
@@ -747,7 +749,7 @@ function searchListener(){
             setTimeout(() => {
                 // remove registered style temporarily
                 let flag = 0;
-                if (registeredPokemon.has(searchInput)){
+                if (registeredPokemon.has(searchInput)) {
                     searchedPokemon.firstChild.classList.remove("registered");
                     flag = 1;
                 }
@@ -768,13 +770,12 @@ function searchListener(){
                     // remove searched style
                     searchedPokemon.firstChild.classList.remove("searched");
                     // add registered style back
-                    if (flag == 1){
-                    searchedPokemon.firstChild.classList.add("registered");
+                    if (flag == 1) {
+                        searchedPokemon.firstChild.classList.add("registered");
                     }
                 }, 4000);
             }, 400);
-        }
-        catch (error){
+        } catch (error) {
             console.log("Pokemon Doesn't Exist");
         }
     });

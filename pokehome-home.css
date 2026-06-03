@@ -110,7 +110,7 @@ body {
 }
 
 /* search bar */
-.searchArea{
+.searchArea {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,7 +118,7 @@ body {
     margin-top: 30px;
 }
 
-.searchBar{
+.searchBar {
     height: 30px;
     width: 400px;
     margin-right: 10px;
@@ -128,7 +128,7 @@ body {
     background-color: #95C2BE;
 }
 
-.searchSubmit{
+.searchSubmit {
     margin-left: 10px;
     padding: 8px 15px;
     border-radius: 5px;
@@ -136,10 +136,12 @@ body {
     border: none;
     background-color: #227C80;
 }
-.searchSubmit:hover{
+
+.searchSubmit:hover {
     background-color: #5aaeb2;
 }
-.searchSubmit:active{
+
+.searchSubmit:active {
     outline: 2px solid #262d48;
 }
 
@@ -151,11 +153,10 @@ body {
     --c: #262d48;
     --w: 30px;
     border: var(--b) solid #0000;
-    background:
-        linear-gradient(var(--c), var(--c)) top center / var(--w) var(--b) no-repeat,
-        linear-gradient(var(--c), var(--c)) bottom center / var(--w) var(--b) no-repeat,
-        linear-gradient(var(--c), var(--c)) left center / var(--b) var(--w) no-repeat,
-        linear-gradient(var(--c), var(--c)) right center / var(--b) var(--w) no-repeat;
+    background: linear-gradient(var(--c), var(--c)) top center / var(--w) var(--b) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom center / var(--w) var(--b) no-repeat,
+    linear-gradient(var(--c), var(--c)) left center / var(--b) var(--w) no-repeat,
+    linear-gradient(var(--c), var(--c)) right center / var(--b) var(--w) no-repeat;
 }
 
 /* regions - flexible */
@@ -229,20 +230,19 @@ body {
 
 .pokemon img.registered {
     opacity: 1;
-    
+
     /* border styling */
-        /* thickness, color, length */
-        --b: 2px;
-        --c: rgb(39, 179, 39);
-        --w: 15px;
+    /* thickness, color, length */
+    --b: 2px;
+    --c: rgb(39, 179, 39);
+    --w: 15px;
     border: var(--b) solid #0000;
-        --_g: #0000 90deg,var(--c) 0;
-        --_p: var(--w) var(--w) border-box no-repeat;
-    background:
-        conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
-        conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
-        conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
-        conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+    --_g: #0000 90deg, var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+    background: conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0    / var(--_p),
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100% 0    / var(--_p),
+    conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
 }
 
 /* hover popout styling */
