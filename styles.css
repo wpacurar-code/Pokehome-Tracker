@@ -70,25 +70,6 @@ body {
     background-color: #0f3861;
 }
 
-/* mobile */
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .header .progress {
-        position: static;
-        transform: none;
-    }
-
-    .header-right {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-}
-
 /* header dropdown */
 .jumpLinks {
     display: none;
