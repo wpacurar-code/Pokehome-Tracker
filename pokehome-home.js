@@ -596,8 +596,8 @@ const regions = {
                 title: "Paldea Alternate",
                 pokemon: [
                     "oinkologne-female", "maushold-family4", "squawkabilly-blue", "squawkabilly-yellow", "squawkabilly-white", "tatsugiri-droopy",
-                    "tatsugiri-stretchy", "dudunsparce-three-segment", "gimmighoul-roaming", "poltchageist", "sinistcha", "ursaluna-bloodmoon",
-                    "floette-eternal"
+                    "tatsugiri-stretchy", "dudunsparce-three-segment", "gimmighoul-roaming", "poltchageist", "sinistcha", "ursaluna-bloodmoon"
+
                 ]
             },
             {
@@ -605,10 +605,19 @@ const regions = {
                 pokemon: [
                     "tauros-paldean-combat", "tauros-paldean-blaze", "tauros-paldean-aqua", "wooper-paldean"
                 ]
+            },
+            {
+                title: "Kalosian Alternate",
+                pokemon: [
+                    "floette-eternal"
+                ]
             }
         ]
     }
 };
+
+// set that includes registered pokemon
+const registeredPokemon = new Set();
 
 // format name for span popup
 function formatName(name) {
@@ -698,6 +707,20 @@ function renderRegions(regionKeys = Object.keys(regions)) {
     });
 }
 
+// register saved pokemon from localstorage
+function addRegistered() {
+    if (JSON.parse(localStorage.getItem("savedPokemon")) !== null) {
+        for (let i = 0; i < JSON.parse(localStorage.getItem("savedPokemon")).length; i++) {
+            // add pokemon to registered set
+            registeredPokemon.add(JSON.parse(localStorage.getItem("savedPokemon"))[i]);
+            // add styling
+            document.querySelector(`[data-pokemon="${JSON.parse(localStorage.getItem("savedPokemon"))[i]}"]`).firstChild.classList.add("registered");
+            // update progress tracker
+            updateProgress();
+        }
+    }
+}
+
 // render the regions
 renderRegions(["kanto"]);
 renderRegions(["johto"]);
@@ -709,23 +732,18 @@ renderRegions(["alola"]);
 renderRegions(["galar"]);
 renderRegions(["paldea"]);
 
+// gather data from local storage
+addRegistered();
 
-// set that includes registered pokemon
-const registeredPokemon = new Set();
 
 // opens the region jump dropdown
 function headerDropdownListener() {
     // open
-    document.querySelector(".headerJump").addEventListener("click", (event) => {
-        event.stopPropagation();
+    document.querySelector(".headerJump").addEventListener("click", (e) => {
+        e.stopPropagation();
         document.querySelector(".jumpLinks").classList.toggle("open");
     });
 }
-
-// // prevent closing when clicking inside dropdown
-// document.querySelector(".jumpLinks").addEventListener("click", (event) => {
-//     event.stopPropagation();
-// });
 
 // closes region jump dropdown
 function headerCloseListener() {
@@ -734,9 +752,17 @@ function headerCloseListener() {
     });
 }
 
+// save button listener
+function saveListener() {
+    document.querySelector(".headerSave").addEventListener("click", () => {
+        // save registered pokemon to local storage
+        localStorage.setItem("savedPokemon", JSON.stringify([...registeredPokemon]));
+    });
+}
+
 // search feature
 function searchListener() {
-    document.querySelector(".searchSubmit").addEventListener("click", () => {
+    function runSearch() {
         const searchInput = document.querySelector(".searchBar").value.toLowerCase();
         try {
             const searchedPokemon = document.querySelector(`[data-pokemon="${searchInput}"]`);
@@ -770,13 +796,22 @@ function searchListener() {
                     // remove searched style
                     searchedPokemon.firstChild.classList.remove("searched");
                     // add registered style back
-                    if (flag == 1) {
+                    if (flag === 1) {
                         searchedPokemon.firstChild.classList.add("registered");
                     }
                 }, 4000);
             }, 400);
         } catch (error) {
             console.log("Pokemon Doesn't Exist");
+        }
+    }
+
+    // if search button is clicked
+    document.querySelector(".searchSubmit").addEventListener("click", runSearch);
+    // if enter is pressed
+    document.querySelector(".searchBar").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            runSearch();
         }
     });
 }
@@ -798,7 +833,7 @@ function pokemonExist(pokemon) {
 
 // updates progress
 function updateProgress() {
-    document.querySelector(".totalProgress").innerHTML = registeredPokemon.size;
+    document.querySelector(".totalProgress").innerHTML = registeredPokemon.size.toString();
 }
 
 // handles pokemon click
@@ -825,5 +860,6 @@ function pokemonClicked(pokemon) {
 // calling listeners
 headerDropdownListener();
 headerCloseListener();
+saveListener();
 searchListener();
 selectionListener();
