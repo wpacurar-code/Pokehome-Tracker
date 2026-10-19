@@ -2,7 +2,7 @@
 
 A lightweight, browser-based completion tracker for your Pokémon HOME Pokédex. Click a Pokémon to mark it as registered, watch your progress climb toward 1395, and save your progress locally in your browser.
 
-**Live site:** ...
+**Live site:** https://wpacurar-code.github.io/Pokehome-Tracker/
 
 ## Features
 
