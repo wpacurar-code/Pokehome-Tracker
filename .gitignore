@@ -1,2 +1,16 @@
 # JetBrains IDE folder
 .idea/
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+
+# Logs and dependencies
+*.log
+node_modules/
+
+# Claude Code local settings
+.claude/settings.local.json
