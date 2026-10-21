@@ -493,7 +493,7 @@ const regions = {
             {
                 title: "Galar Alternate",
                 pokemon: [
-                    "indeedee-female", "toxtricity-low-key", "sinistea", "polteageist", "urshifu-rapid-strike", "zarude-dada"
+                    "indeedee-female", "toxtricity-low-key", "sinistea-antique", "polteageist-antique", "urshifu-rapid-strike", "zarude-dada"
                 ]
             },
             {
@@ -596,7 +596,7 @@ const regions = {
                 title: "Paldea Alternate",
                 pokemon: [
                     "oinkologne-female", "maushold-family4", "squawkabilly-blue", "squawkabilly-yellow", "squawkabilly-white", "tatsugiri-droopy",
-                    "tatsugiri-stretchy", "dudunsparce-three-segment", "gimmighoul-roaming", "poltchageist", "sinistcha", "ursaluna-bloodmoon"
+                    "tatsugiri-stretchy", "dudunsparce-three-segment", "gimmighoul-roaming", "poltchageist-antique", "sinistcha-antique", "ursaluna-bloodmoon"
 
                 ]
             },
