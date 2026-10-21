@@ -436,7 +436,7 @@ const regions = {
             {
                 title: "Alola Alternate",
                 pokemon: [
-                    "oricorio-pom-pom", "oricorio-pau", "oricorio-sensu", "rockruff", "lycanroc-midnight", "lycanroc-dusk",
+                    "oricorio-pom-pom", "oricorio-pau", "oricorio-sensu", "rockruff-own-tempo", "lycanroc-midnight", "lycanroc-dusk",
                     "minior-orange-core", "minior-yellow-core", "minior-green-core", "minior-blue-core", "minior-indigo-core", "minior-violet-core",
                     "magearna-original"
                 ]
@@ -806,12 +806,89 @@ function searchListener() {
         }
     }
 
+    const searchBar = document.querySelector(".searchBar");
+    const suggestions = document.querySelector(".searchSuggestions");
+    const allNames = [...new Set([...document.querySelectorAll(".pokemon")].map(p => p.dataset.pokemon))];
+    let activeIndex = -1;
+
+    function closeSuggestions() {
+        suggestions.classList.remove("open");
+        suggestions.replaceChildren();
+        activeIndex = -1;
+    }
+
+    function setActive(index) {
+        const items = suggestions.children;
+        if (items.length === 0) return;
+        activeIndex = (index + items.length) % items.length;
+        [...items].forEach((item, i) => item.classList.toggle("active", i === activeIndex));
+    }
+
+    function chooseSuggestion(name) {
+        searchBar.value = name;
+        closeSuggestions();
+        runSearch();
+    }
+
+    // prefix matches first, then anywhere in the name
+    function showSuggestions() {
+        const query = searchBar.value.trim().toLowerCase();
+        closeSuggestions();
+        if (query === "") return;
+
+        const matches = [
+            ...allNames.filter(name => name.startsWith(query)),
+            ...allNames.filter(name => !name.startsWith(query) && name.includes(query))
+        ].slice(0, 8);
+        if (matches.length === 0) return;
+
+        matches.forEach(name => {
+            const item = document.createElement("li");
+            item.textContent = formatName(name);
+            item.dataset.name = name;
+            // mousedown fires before the input loses focus
+            item.addEventListener("mousedown", (e) => {
+                e.preventDefault();
+                chooseSuggestion(name);
+            });
+            suggestions.appendChild(item);
+        });
+        suggestions.classList.add("open");
+    }
+
+    // x button clears the search bar
+    const clearButton = document.querySelector(".searchClear");
+    // mousedown fires before the input loses focus
+    clearButton.addEventListener("mousedown", (e) => e.preventDefault());
+    clearButton.addEventListener("click", () => {
+        searchBar.value = "";
+        closeSuggestions();
+        searchBar.focus();
+    });
+
+    searchBar.addEventListener("input", showSuggestions);
+    searchBar.addEventListener("blur", closeSuggestions);
+
     // if search button is clicked
     document.querySelector(".searchSubmit").addEventListener("click", runSearch);
-    // if enter is pressed
-    document.querySelector(".searchBar").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            runSearch();
+    searchBar.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setActive(activeIndex + 1);
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            // with nothing highlighted, start from the last item
+            setActive(activeIndex === -1 ? -1 : activeIndex - 1);
+        } else if (e.key === "Escape") {
+            closeSuggestions();
+        } else if (e.key === "Enter") {
+            // pick the highlighted suggestion, otherwise search what was typed
+            if (activeIndex >= 0) {
+                chooseSuggestion(suggestions.children[activeIndex].dataset.name);
+            } else {
+                closeSuggestions();
+                runSearch();
+            }
         }
     });
 }
