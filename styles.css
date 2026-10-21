@@ -109,6 +109,73 @@ body {
     background-color: #95C2BE;
 }
 
+.searchWrap {
+    position: relative;
+}
+
+.searchBar {
+    padding-right: 28px;
+}
+
+/* only visible while the bar has text */
+.searchClear {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: #0f3861;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.searchClear:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #262d48;
+}
+
+.searchBar:not(:placeholder-shown) + .searchClear {
+    display: flex;
+}
+
+.searchSuggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 400px;
+    margin: 2px 0 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 5px;
+    background-color: #0f3861;
+    color: white;
+    z-index: 3;
+}
+
+.searchSuggestions.open {
+    display: block;
+}
+
+.searchSuggestions li {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.searchSuggestions li:hover,
+.searchSuggestions li.active {
+    background-color: #262d48;
+}
+
 .searchSubmit {
     margin-left: 10px;
     padding: 8px 15px;

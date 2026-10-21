@@ -51,7 +51,11 @@
     </div>
 
     <div class="searchArea">
-        <input type="text" class="searchBar" placeholder="Enter Pokemon Name"/>
+        <div class="searchWrap">
+            <input type="text" class="searchBar" placeholder="Enter Pokemon Name" autocomplete="off"/>
+            <button type="button" class="searchClear" aria-label="Clear search">&times;</button>
+            <ul class="searchSuggestions"></ul>
+        </div>
         <button type="submit" class="searchSubmit">Search</button>
     </div>
 

@@ -10,7 +10,7 @@ A lightweight, browser-based completion tracker for your Pokémon HOME Pokédex.
 - **All nine regions**: Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar and Paldea.
 - **Click to register**: click a sprite to toggle it as registered or unregistered.
 - **Progress counter**: the header shows `Dex Progress: X / 1395`.
-- **Search**: type a Pokémon name (e.g. `pikachu`) and press Enter or click Search to scroll to it and highlight it.
+- **Search**: type a Pokémon name (e.g. `pikachu`) and press Enter or click Search to scroll to it and highlight it. As you type, a dropdown suggests matching names (e.g. `pika` suggests Pikachu); pick one with the mouse or the arrow keys and Enter.
 - **Jump to region**: a dropdown in the header skips straight to any region.
 - **Save**: progress is stored in your browser's `localStorage`, so it persists between visits.
 
